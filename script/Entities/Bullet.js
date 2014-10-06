@@ -8,7 +8,7 @@ ENGINE.Bullet = function(args) {
   }, args);
 
   this.radius = 3;
-
+  this.sprite = [20, 53, 6, 6];
 };
 
 ENGINE.Bullet.prototype = {
@@ -49,9 +49,7 @@ ENGINE.Bullet.prototype = {
   },
 
   render: function() {
-
-    app.layer.fillStyle("#fff").fillRect(this.x - 4, this.y - 4, 8, 8);
-
+    app.layer.drawRegion(app.images.spritesheet, this.sprite, this.x - 4, this.y - 4);
   }
 
 };
